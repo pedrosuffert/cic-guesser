@@ -7,6 +7,8 @@ Esse é o projeto final da disciplina Projeto e Análise de Algoritmos desenvolv
 
 O arquivo `paa_scraping.ipynb` é referente a construção da base de dados resultante da mineração de dados do site do Departamento de Ciência da Computação da Universidade de Brasília.
 
+A árvore de decisão utilizada para a construção desse programa está listada no arquivo `trees/other-1.pdf`.
+
 ## Mais sobre a Stack
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
