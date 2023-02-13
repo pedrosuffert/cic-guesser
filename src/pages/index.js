@@ -45,26 +45,39 @@ export default function Home() {
     }
   }, [mostraBotoes])
 
+  const [comecarJogo, setComecarJogo] = useState(true)
 
   return (
     <>
       <Head>
-        <title>CIC Guesser</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <meta
           name="description"
           content="Projeto de PAA que consiste em uma réplica do jogo Akinator"
         />
+        <title>CIC Guesser</title>
       </Head>
       <div class="container">
         <div class="col-md-6 mx-auto mt-5">
           <div class="card p-3 shadow-sm">
             <div class="card-body">
-              <h2 class="card-title">Advinhe o professor do CIC</h2>
-              <form>
-                <div class="row">
-                  <p class="fs-4 text-center">{pergunta}</p>
-                </div>
+              <h2 class="card-title">Adivinhe o professor do CIC</h2>
+              {comecarJogo ? 
+                <form>
+                  <div class="row">
+                    <p class="fs-4 text-center">Responda às perguntas a seguir para adivinhar o professor do CIC</p>
+                  </div>
+                  <div class="row">
+                    <button onClick={() => setComecarJogo(false)} type="button" class="btn btn-dark btn-lg btn-block">
+                      Começar a jogar
+                    </button>
+                  </div>
+                </form>
+                : 
+                <form>
+                  <div class="row">
+                    <p class="fs-4 text-center">{pergunta}</p>
+                  </div>
                   <div class="row">
                     <div class="d-grid gap-2">
                     {mostraBotoes && <button onClick={percorreArvoreSim} type="button" class="btn btn-dark btn-lg btn-block">
@@ -73,10 +86,12 @@ export default function Home() {
                     {mostraBotoes && <button onClick={percorreArvoreNao} type="button" class="btn btn-dark btn-lg btn-block">
                         Não
                     </button>}
-                    {!mostraBotoes && <p>Recarregue a página para reiniciar</p>}
+                    {!mostraBotoes && <button onClick={() => window.location.reload(true)} type="button" class="btn btn-dark btn-lg btn-block">
+                        Jogar novamente
+                    </button>}
                     </div>
                   </div>
-              </form>
+                </form>}
             </div>
           </div>
         </div>
